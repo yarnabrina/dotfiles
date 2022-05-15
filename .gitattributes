@@ -6,3 +6,4 @@
 global-git-attributes linguist-language=gitattributes
 global-git-configurations linguist-language=gitconfig
 global-git-ignore-files linguist-language=gitignore
+vim-configurations linguist-language=vim

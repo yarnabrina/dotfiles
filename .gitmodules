@@ -1,3 +1,6 @@
 [submodule "tools/git/diff-so-fancy"]
 	path = tools/git/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
+[submodule "tools/vim/papercolor"]
+	path = tools/vim/papercolor
+	url = https://github.com/NLKNguyen/papercolor-theme.git
