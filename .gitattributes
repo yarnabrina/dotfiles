@@ -1,0 +1,8 @@
+# These files are text and should be normalized (Convert crlf => lf)
+.gitattributes text
+.gitignore text
+
+# Enable syntax highlighting for files.
+global-git-attributes linguist-language=gitattributes
+global-git-configurations linguist-language=gitconfig
+global-git-ignore-files linguist-language=gitignore
