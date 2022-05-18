@@ -1,5 +1,11 @@
-# Import the module
+# Import the modules
 Import-Module PSReadLine
+
+# Enable Prompt
+oh-my-posh init pwsh --config "~\customised_powerlevel10k_lean.omp.json" | Invoke-Expression
+
+# Enable Transient Prompt
+Enable-PoshTransientPrompt
 
 # Enable Predictive IntelliSense
 Set-PSReadLineOption -PredictionSource History
