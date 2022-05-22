@@ -10,6 +10,7 @@ global-git-attributes linguist-language=gitattributes
 global-git-configurations linguist-language=gitconfig
 global-git-ignore-files linguist-language=gitignore
 key-bindings linguist-language=sh
+install linguist-language=sh
 options linguist-language=sh
 powerlevel10k-configurations linguist-language=sh
 vim-configurations linguist-language=vim
