@@ -1,0 +1,10 @@
+# create directory hierarchy and navigate
+function mkcd() {
+    mkdir -p $1
+    cd $1
+}
+
+# fancier diff
+function fdiff() {
+    diff -u -t $1 $2 | diff-so-fancy
+}

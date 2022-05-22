@@ -1,0 +1,40 @@
+# use emacs key bindings
+bindkey -e
+
+# enable fuzzy find history forward
+autoload -U up-line-or-beginning-search
+zle -N up-line-or-beginning-search
+
+# [UpArrow]
+bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-beginning-search
+bindkey -M viins "${terminfo[kcuu1]}" up-line-or-beginning-search
+bindkey -M vicmd "${terminfo[kcuu1]}" up-line-or-beginning-search
+
+# enable fuzzy find history backward
+autoload -U down-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+# [DownArrow]
+bindkey -M emacs "${terminfo[kcud1]}" down-line-or-beginning-search
+bindkey -M viins "${terminfo[kcud1]}" down-line-or-beginning-search
+bindkey -M vicmd "${terminfo[kcud1]}" down-line-or-beginning-search
+
+# [Ctrl-RightArrow]
+bindkey -M emacs "^[[1;5C" forward-word
+bindkey -M viins "^[[1;5C" forward-word
+bindkey -M vicmd "^[[1;5C" forward-word
+
+# [Ctrl-LeftArrow]
+bindkey -M emacs "^[[1;5D" backward-word
+bindkey -M viins "^[[1;5D" backward-word
+bindkey -M vicmd "^[[1;5D" backward-word
+
+# [Ctrl-Backapace]
+bindkey -M emacs "^H" backward-delete-word
+bindkey -M viins "^H" backward-delete-word
+bindkey -M vicmd "^H" backward-delete-word
+
+# [Ctrl-Delete]
+bindkey -M emacs "^[[3;5~" delete-word
+bindkey -M viins "^[[3;5~" delete-word
+bindkey -M vicmd "^[[3;5~" delete-word
