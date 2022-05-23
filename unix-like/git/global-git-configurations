@@ -140,6 +140,9 @@
     # detect copies as well as renames
     renames = copies
 
+    # highlight moved lines
+    colorMoved = dimmed-zebra
+
 [difftool]
     # skip prompt before invocation
     prompt = false

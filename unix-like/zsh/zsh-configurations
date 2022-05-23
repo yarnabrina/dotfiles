@@ -10,13 +10,24 @@ source $HOME/.options
 source $HOME/.bindings
 
 # custom exports
-export EDITOR="vim"  # setting default editor
+
+## default editor
+export VISUAL="vim"
+export EDITOR="$VISUAL"
+
+## history
 export HISTFILE="$HOME/.zsh_history"  # location of history file
 export HISTSIZE=10000  # amount of history in memory
+export SAVEHIST=5000  # amount of history in file
+
+## language
 export LANG="en_US.UTF-8"  # setting default language
 export LC_ALL="en_US.UTF-8"  # setting default encoding
+
+## path
 export PATH="$HOME/diff-so-fancy:$PATH"  # modifying system path
-export SAVEHIST=5000  # amount of history in file
+
+## word regex
 export WORDCHARS=""  # bash style alpha-numeric word
 
 # loading antigen
