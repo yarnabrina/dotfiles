@@ -1,17 +1,17 @@
 mkdir -p $HOME/.vim/colors
-ln -s $HOME/dotfiles/tools/vim/papercolor/colors/PaperColor.vim $HOME/.vim/colors
+ln -s $HOME/dotfiles/unix-like/tools/papercolor/colors/PaperColor.vim $HOME/.vim/colors
 ln -s $HOME/dotfiles/vim/vim-configurations $HOME/.vimrc
 
-ln -s $HOME/dotfiles/tools/git/diff-so-fancy $HOME/diff-so-fancy
-ln -s $HOME/dotfiles/git/global-git-attributes $HOME/.gitattributes
-ln -s $HOME/dotfiles/git/global-git-ignore-files $HOME/.gitignore
-ln -s $HOME/dotfiles/git/global-git-configurations $HOME/.gitconfig
+ln -s $HOME/dotfiles/unix-like/tools/diff-so-fancy $HOME/diff-so-fancy
+ln -s $HOME/dotfiles/unix-like/git/global-git-attributes $HOME/.gitattributes
+ln -s $HOME/dotfiles/unix-like/git/global-git-ignore-files $HOME/.gitignore
+ln -s $HOME/dotfiles/unix-like/git/global-git-configurations $HOME/.gitconfig
 
-ln -s $HOME/dotfiles/tools/zsh/antigen/bin/antigen.zsh $HOME/antigen.zsh
-ln -s $HOME/dotfiles/zsh/aliases $HOME/.aliases
-ln -s $HOME/dotfiles/zsh/functions $HOME/.functions
-ln -s $HOME/dotfiles/zsh/key-bindings $HOME/.bindings
-ln -s $HOME/dotfiles/zsh/options $HOME/.options
-ln -s $HOME/dotfiles/zsh/antigen-configurations $HOME/.antigenrc
-ln -s $HOME/dotfiles/zsh/powerlevel10k-configurations $HOME/.p10k.zsh
-ln -s $HOME/dotfiles/zsh/zsh-configurations $HOME/.zshrc
+ln -s $HOME/dotfiles/unix-like/tools/antigen/bin/antigen.zsh $HOME/antigen.zsh
+ln -s $HOME/dotfiles/unix-like/zsh/aliases $HOME/.aliases
+ln -s $HOME/dotfiles/unix-like/zsh/functions $HOME/.functions
+ln -s $HOME/dotfiles/unix-like/zsh/key-bindings $HOME/.bindings
+ln -s $HOME/dotfiles/unix-like/zsh/options $HOME/.options
+ln -s $HOME/dotfiles/unix-like/zsh/antigen-configurations $HOME/.antigenrc
+ln -s $HOME/dotfiles/unix-like/zsh/powerlevel10k-configurations $HOME/.p10k.zsh
+ln -s $HOME/dotfiles/unix-like/zsh/zsh-configurations $HOME/.zshrc
