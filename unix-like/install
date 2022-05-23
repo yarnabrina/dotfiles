@@ -1,6 +1,6 @@
 mkdir -p $HOME/.vim/colors
 ln -s $HOME/dotfiles/unix-like/tools/papercolor/colors/PaperColor.vim $HOME/.vim/colors
-ln -s $HOME/dotfiles/vim/vim-configurations $HOME/.vimrc
+ln -s $HOME/dotfiles/unix-like/vim/vim-configurations $HOME/.vimrc
 
 ln -s $HOME/dotfiles/unix-like/tools/diff-so-fancy $HOME/diff-so-fancy
 ln -s $HOME/dotfiles/unix-like/git/global-git-attributes $HOME/.gitattributes
