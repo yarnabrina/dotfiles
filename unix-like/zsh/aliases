@@ -45,3 +45,10 @@ alias ydiff="diff -y -W $COLUMNS --suppress-common-lines -t"  ## side by side di
 # find modifications
 alias fd="find . -type d -name"  # find directory
 alias ff="find . -type f -name"  # find file
+
+# vim modifications
+alias v="vim"
+alias vr="vim -R"
+
+# git modifications
+alias g="git"
