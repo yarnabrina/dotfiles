@@ -2,6 +2,8 @@
     a = add
     aa = add --all
 
+    al = config --get-regexp alias
+
     b = branch
     bd = branch --delete
     bD = branch --delete --force
@@ -12,7 +14,9 @@
     cob = checkout -b
 
     cl = clone
+    clm = clone --recurse-submodules
     cls = clone --depth 1
+    clsm = clone --depth 1 --recurse-submodules
 
     c = commit
     ca = commit --ammend
@@ -23,11 +27,15 @@
     dw = diff HEAD
     dr = diff @{upstream}
 
-    f = fetch
-    fa = fetch --all --prune --prune-tags --tags
+    f = fetch --all --tags
 
-    lg = log --graph
-    lgp = log --graph --pretty=oneline
+    h = help
+
+    lg = log --oneline
+    lgp = log --pretty=format:'%Cred%h%Creset %Cgreen(%ad) %C(bold blue)<%an>%Creset %s %C(auto)%d%Creset'
+
+    m = merge
+    ma = merge --abort
 
     pl = pull
     plr = pull --rebase --autostash
@@ -73,7 +81,7 @@
     upstream = cyan
 
 [color "diff"]
-    meta = 11
+    meta = yellow
     frag = magenta bold
     func = 146 bold
     commit = yellow bold
@@ -136,6 +144,19 @@
     # skip prompt before invocation
     prompt = false
 
+[fetch]
+    # recurse if superproject gets a commit that updates reference of submodule
+    recurseSubmodules = on-demand
+
+    # remove non-existing remote-tracking references
+    prune = true
+
+    # remove local tags no longer existing in remote
+    pruneTags = true
+
+    # maximum number of simultaneous fetch operations
+    parallel = 0
+
 [help]
     # suggest correction of mistyped commands
     autocorrect = prompt
@@ -149,7 +170,7 @@
     abbrevCommit = true
 
     # format of commit timestamp
-    date = iso-strict
+    date = human
 
     # show ref names of commits
     decorate = short
@@ -176,6 +197,9 @@
     # action to take if no refspec is given
     default = upstream
 
+    # submodules changed in revisions to be pushed are pushed
+    recurseSubmodules = on-demand
+
 [status]
     # shorter format
     short = true
@@ -187,10 +211,10 @@
     aheadBehind = true
 
 [user]
-    # author
+    # name of author and committer
     name = Anirban Ray
 
-    # committer
+    # email of author and committer
     email =
 
     # avoid guessing defaults
