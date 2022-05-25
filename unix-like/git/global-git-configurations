@@ -6,7 +6,7 @@
 
     b = branch
     bd = branch --delete
-    bD = branch --delete --force
+    bdf = branch --delete --force
     br = branch --remote
     brv = branch --all --verbose --verbose
 
