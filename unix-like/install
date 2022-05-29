@@ -14,5 +14,11 @@ ln -s $HOME/dotfiles/unix-like/zsh/functions $HOME/.functions
 ln -s $HOME/dotfiles/unix-like/zsh/key-bindings $HOME/.bindings
 ln -s $HOME/dotfiles/unix-like/zsh/options $HOME/.options
 ln -s $HOME/dotfiles/unix-like/zsh/antigen-configurations $HOME/.antigenrc
-ln -s $HOME/dotfiles/unix-like/zsh/powerlevel10k-configurations $HOME/.p10k.zsh
+
+if ! zmodload zsh/langinfo zsh/terminfo || [[ $langinfo[CODESET] != (utf|UTF)(-|)8 || $TERM == (dumb|linux) ]] || (( terminfo[colors] < 256 )); then
+    ln -s $HOME/dotfiles/unix-like/zsh/minimal-powerlevel10k-configurations $HOME/.p10k.zsh
+else
+    ln -s $HOME/dotfiles/unix-like/zsh/full-powerlevel10k-configurations $HOME/.p10k.zsh
+fi
+
 ln -s $HOME/dotfiles/unix-like/zsh/zsh-configurations $HOME/.zshrc
