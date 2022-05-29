@@ -1,9 +1,0 @@
-[submodule "tools/git/diff-so-fancy"]
-	path = unix-like/tools/diff-so-fancy
-	url = https://github.com/so-fancy/diff-so-fancy.git
-[submodule "tools/vim/papercolor"]
-	path = unix-like/tools/papercolor
-	url = https://github.com/NLKNguyen/papercolor-theme.git
-[submodule "tools/zsh/antigen"]
-	path = unix-like/tools/antigen
-	url = https://github.com/zsh-users/antigen.git
