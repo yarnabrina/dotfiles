@@ -17,10 +17,11 @@ unsetopt MENU_COMPLETE  # avoid insert top match for ambiguous completions
 unsetopt REC_EXACT  # avoid insert exact match for ambiguous completions
 
 # expansion and globbing
-
 setopt BAD_PATTERN  # print error for badly formed patterns
 setopt CASE_GLOB  # case sensitive globbing
 setopt EXTENDED_GLOB  # use `#`, `~`, `*` as part of patterns
+setopt NUMERIC_GLOB_SORT  # sort file names numerically instead of lexicographically
+unsetopt RC_EXPAND_PARAM  # disable array expansion
 
 # history
 setopt APPEND_HISTORY  # avoid replace history
@@ -30,6 +31,7 @@ setopt HIST_FCNTL_LOCK  # use file lock provided by operating system
 setopt HIST_FIND_NO_DUPS  # avoid display of duplicate non-contiguous history
 setopt HIST_IGNORE_ALL_DUPS  # avoid duplicate history
 setopt HIST_IGNORE_DUPS  # avoid duplicate of previous event
+setopt HIST_IGNORE_SPACE  # avoid commands starting with space
 setopt HIST_LEX_WORDS  # words read from history are divided as normal CLI
 unsetopt HIST_NO_FUNCTIONS  # keep function definition
 setopt HIST_NO_STORE  # remove edited history
@@ -42,11 +44,14 @@ setopt SHARE_HISTORY  # add new typed commands to history file
 # input/output
 setopt ALIASES  # expand aliases
 setopt CLOBBER  # allow `>` to truncate existing files
-unsetopt CORRECT  # skip to attempt spelling correction
+setopt CORRECT  # attempt spelling correction
 unsetopt CORRECT_ALL  # skip to attempt spelling of all arguments
 setopt INTERACTIVE_COMMENTS  # allow comments
 setopt RM_STAR_SILENT  #  avoid prompting before deleting with *
 setopt SHORT_LOOPS  # allow short forms
+
+# job control
+setopt CHECK_JOBS  # warn about running processes while exiting
 
 # scripts and functions
 unsetopt ALIAS_FUNC_DEF  # function name cannot be expanded as an alias
@@ -59,5 +64,6 @@ unsetopt CONTINUE_ON_ERROR  # fail on error
 unsetopt SINGLE_COMMAND  # do not exit shell after just one command
 
 # zsh line editor
+unsetopt BEEP  # skip beep on error in ZLE
 unsetopt SINGLE_LINE_ZLE  # use multi-line editor
 setopt ZLE  # enable zle

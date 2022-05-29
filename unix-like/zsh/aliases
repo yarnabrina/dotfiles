@@ -52,3 +52,9 @@ alias vr="vim -R"
 
 # git modifications
 alias g="git"
+
+# human-friendly df
+alias df="df -h"
+
+# human-friendly free
+alias free="free -h"

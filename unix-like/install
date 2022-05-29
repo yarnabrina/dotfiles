@@ -9,6 +9,7 @@ ln -s $HOME/dotfiles/unix-like/git/global-git-configurations $HOME/.gitconfig
 
 ln -s $HOME/dotfiles/unix-like/tools/antigen/bin/antigen.zsh $HOME/antigen.zsh
 ln -s $HOME/dotfiles/unix-like/zsh/aliases $HOME/.aliases
+ln -s $HOME/dotfiles/unix-like/zsh/exports $HOME/.exports
 ln -s $HOME/dotfiles/unix-like/zsh/functions $HOME/.functions
 ln -s $HOME/dotfiles/unix-like/zsh/key-bindings $HOME/.bindings
 ln -s $HOME/dotfiles/unix-like/zsh/options $HOME/.options

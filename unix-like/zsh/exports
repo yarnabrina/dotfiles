@@ -1,0 +1,37 @@
+# default editor
+export VISUAL="vi"
+export EDITOR="vim"
+
+# history
+export HISTFILE="$HOME/.zsh_history"  # location of history file
+export HISTSIZE=10000  # amount of history in memory
+export SAVEHIST=5000  # amount of history in file
+
+# language
+export LANG="en_US.UTF-8"  # setting default language
+export LC_ALL="en_US.UTF-8"  # setting default encoding
+
+# coloured manual pages
+
+## enable colours
+autoload -U colors
+colors
+
+## bold and blinking mode
+export LESS_TERMCAP_mb="${fg_bold[red]}"
+export LESS_TERMCAP_md="${fg_bold[red]}"
+export LESS_TERMCAP_me="${reset_color}"
+
+## standout mode
+export LESS_TERMCAP_se="${reset_color}"
+export LESS_TERMCAP_so="${fg_bold[yellow]}${bg[blue]}"
+
+## underlining
+export LESS_TERMCAP_ue="${reset_color}"
+export LESS_TERMCAP_us="${fg_bold[green]}"
+
+# path
+export PATH="$HOME/diff-so-fancy:$PATH"  # modifying system path
+
+# word regex
+export WORDCHARS=""  # bash style alpha-numeric word
