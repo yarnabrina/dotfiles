@@ -11,7 +11,7 @@ winget install oh-my-posh
 Copy-Item prompt-configurations.json ~/customised_powerlevel10k_lean.omp.json
 
 # # link powershell profile script (need administrative rights)
-# New-Item $profile -ItemType SymbolicLink -Target powershell-profile
+# New-Item $profile -ItemType SymbolicLink -Target powershell-profile.ps1
 
 # copy powershell profile script
-Copy-Item powershell-profile $profile
+Copy-Item powershell-profile.ps1 $profile
