@@ -2,44 +2,44 @@
     a = add
     aa = add --all
 
-    al = config --get-regexp alias
-
-    b = branch
+    b = branch --verbose --verbose
+    br = branch --remotes --verbose
+    ba = branch --all --verbose --verbose
     bd = branch --delete
     bdf = branch --delete --force
-    br = branch --remote
-    brv = branch --all --verbose --verbose
 
-    co = checkout
-    cob = checkout -b
+    ch = checkout
+    chb = checkout -b
 
-    cl = clone
-    clm = clone --recurse-submodules
-    cls = clone --depth 1
-    clsm = clone --depth 1 --recurse-submodules
+    cl = clone --recurse-submodules --shallow-submodules --no-remote-submodules
+    cls = clone --depth 1 --recurse-submodules --shallow-submodules --no-remote-submodules
 
-    c = commit
-    ca = commit --ammend
-    cm = commit --message
+    cm = commit
+    cma = commit --ammend
+    cms = commit --message
+
+    cna = config --get-regexp alias
+    cnl = config --show-origin --show-scope --list
 
     d = diff
+    dn = diff --name-status
     ds = diff --cached
     dw = diff HEAD
     dr = diff @{upstream}
 
-    f = fetch --all --tags
+    f = fetch --all --update-shallow --prune --prune-tags --tags --recurse-submodules=on-demand
 
-    h = help
+    h = help --man
 
     lg = log --oneline
     lgp = log --pretty=format:'%Cred%h%Creset %Cgreen(%ad) %C(bold blue)<%an>%Creset %s %C(auto)%d%Creset'
+    ll = log -1 HEAD --stat
 
     m = merge
     ma = merge --abort
 
-    pl = pull
+    pl = pull --no-rebase
     plr = pull --rebase --autostash
-    plnr = pull --no-rebase
 
     ps = push
     psf = push --force
@@ -49,12 +49,25 @@
 
     rs = reset --soft
     rh = reset --hard
+    rd = reset HEAD --
 
-    sth = stash push --keep-index --include-untracked
+    rst = restore
+    rsts = restore --staged
+    rstw = restore --staged --worktree
+
+    sl = shortlog
+    sls = shortlog  --numbered --summary --email
+
+    sma = submodule add --depth 1
+    smu = submodule update --recursive --depth 1 --single-branch
+    smur = submodule update --remote --recursive --depth 1 --single-branch
+
+    stu = stash push --include-untracked
+    stus = stash push --keep-index --include-untracked
     stp = stash pop
+    stps = stash pop --index
 
-    st = status
-    sts = status --short --branch --ahead-behind
+    st = status --short --branch --ahead-behind
 
     sw = switch
     swc = switch --create
@@ -67,8 +80,12 @@
     whitespace = fix
 
 [branch]
-    # Show most recently changed branches first.
+    # show most recently changed branches first
     sort = -committerdate
+
+[clone]
+    # default remote name
+    defaultRemoteName = origin
 
 [color]
     # use colour if output destination is terminal
@@ -110,17 +127,14 @@
     # global .gitignore file
     excludesFile = ~/.gitignore
 
-    # default text viewer
-    pager = diff-so-fancy | less --tabs=4 -F -R -X
-
-    # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+    # prevent showing files whose names contain non-ASCII symbols as unversioned
     # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
     precomposeunicode = false
 
     # ignoring ctime differences between the index and the working tree
     trustctime = false
 
-    # Speed up commands involving untracked files such as `git status`.
+    # speed up commands involving untracked files such as `git status`
     # https://git-scm.com/docs/git-update-index#_untracked_cache
     untrackedCache = true
 
@@ -148,16 +162,7 @@
     prompt = false
 
 [fetch]
-    # recurse if superproject gets a commit that updates reference of submodule
-    recurseSubmodules = on-demand
-
-    # remove non-existing remote-tracking references
-    prune = true
-
-    # remove local tags no longer existing in remote
-    pruneTags = true
-
-    # maximum number of simultaneous fetch operations
+    # maximum number of simultaneous fetch operations (reasonable default)
     parallel = 0
 
 [help]
@@ -165,7 +170,7 @@
     autocorrect = prompt
 
 [init]
-    # default branch name when initializing a new repository.
+    # default branch name
     defaultBranch = main
 
 [log]
@@ -192,9 +197,9 @@
     # skip prompt before invocation
     prompt = false
 
-[pull]
-    # include local merge commits
-    rebase = merges
+[pager]
+    # fancier diff
+    diff = diff-so-fancy | less --tabs=4 -F -R -X
 
 [push]
     # action to take if no refspec is given
@@ -203,15 +208,13 @@
     # submodules changed in revisions to be pushed are pushed
     recurseSubmodules = on-demand
 
-[status]
-    # shorter format
-    short = true
+[rerere]
+    # resolved conflicts are recorded
+    enabled = true
 
-    # show branch and tracking information
-    branch = true
-
-    # show commit counts with respect to upstream
-    aheadBehind = true
+[submodule]
+    # maximum number of simultaneous submodules fetch/clone operations (reasonable default)
+    fetchJobs = 0
 
 [user]
     # name of author and committer
