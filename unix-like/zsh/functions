@@ -9,15 +9,6 @@ function fdiff() {
     diff -u -t $1 $2 | diff-so-fancy
 }
 
-# shorter wrapper for `git` or `git status`
-function g() {
-    if [[ $# -gt 0 ]]; then
-        git "$@"
-    else
-        git status
-    fi
-}
-
 # check if command exists
 function exists() {
     if ! [ -x "$(command -v $1)" ]; then

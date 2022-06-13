@@ -55,3 +55,6 @@ alias df="df -h"
 
 # human-friendly free
 alias free="free -h"
+
+# abbreviated git
+alias g="git"
