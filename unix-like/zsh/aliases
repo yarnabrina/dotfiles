@@ -39,8 +39,8 @@ alias map="xargs -n 1"
 # coloured grep
 alias grep="grep --color=auto"
 
-# diff modifications
-alias ydiff="diff -y -W $COLUMNS --suppress-common-lines -t"  ## side by side diff
+# side by side diff
+alias ydiff="diff -y -W $COLUMNS --suppress-common-lines -t"
 
 # find modifications
 alias fd="find . -type d -name"  # find directory
@@ -49,9 +49,6 @@ alias ff="find . -type f -name"  # find file
 # vim modifications
 alias v="vim"
 alias vr="vim -R"
-
-# git modifications
-alias g="git"
 
 # human-friendly df
 alias df="df -h"
