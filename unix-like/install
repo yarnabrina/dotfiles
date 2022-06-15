@@ -8,13 +8,14 @@ ln -s $HOME/dotfiles/unix-like/git/global-git-attributes $HOME/.gitattributes
 ln -s $HOME/dotfiles/unix-like/git/global-git-ignore-files $HOME/.gitignore
 ln -s $HOME/dotfiles/unix-like/git/global-git-configurations $HOME/.gitconfig
 
-ln -s $HOME/dotfiles/unix-like/tools/antigen/bin/antigen.zsh $HOME/antigen.zsh
+ln -s $HOME/dotfiles/unix-like/tools/antigen/bin/antigen.zsh $HOME/antigen-loader
+ln -s $HOME/dotfiles/unix-like/zsh/antigen-configurations $HOME/.antigenrc
+
 ln -s $HOME/dotfiles/unix-like/zsh/aliases $HOME/.aliases
 ln -s $HOME/dotfiles/unix-like/zsh/exports $HOME/.exports
 ln -s $HOME/dotfiles/unix-like/zsh/functions $HOME/.functions
 ln -s $HOME/dotfiles/unix-like/zsh/key-bindings $HOME/.bindings
 ln -s $HOME/dotfiles/unix-like/zsh/options $HOME/.options
-ln -s $HOME/dotfiles/unix-like/zsh/antigen-configurations $HOME/.antigenrc
 
 if ! zmodload zsh/langinfo zsh/terminfo || [[ $langinfo[CODESET] != (utf|UTF)(-|)8 || $TERM == (dumb|linux) ]] || (( terminfo[colors] < 256 )); then
     ln -s $HOME/dotfiles/unix-like/zsh/minimal-powerlevel10k-configurations $HOME/.p10k.zsh

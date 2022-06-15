@@ -11,7 +11,7 @@ source $HOME/.options
 source $HOME/.bindings
 
 # loading antigen
-source $HOME/antigen.zsh
+source $HOME/antigen-loader
 antigen init $HOME/.antigenrc
 
 # disabling default ls outputs
