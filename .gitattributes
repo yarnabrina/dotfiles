@@ -6,13 +6,14 @@
 aliases linguist-language=sh
 antigen-configurations linguist-language=sh
 exports linguist-language=sh
+full-powerlevel10k-configurations linguist-language=sh
 functions linguist-language=sh
 global-git-attributes linguist-language=gitattributes
 global-git-configurations linguist-language=gitconfig
 global-git-ignore-files linguist-language=gitignore
 key-bindings linguist-language=sh
 install linguist-language=sh
+minimal-powerlevel10k-configurations linguist-language=sh
 options linguist-language=sh
-powerlevel10k-configurations linguist-language=sh
 vim-configurations linguist-language=vim
 zsh-configurations linguist-language=sh
