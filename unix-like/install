@@ -1,3 +1,7 @@
+#!/usr/bin/env zsh
+
+set -Eeuxo pipefail
+
 ln -s $HOME/dotfiles/unix-like/tools/diff-so-fancy $HOME/diff-so-fancy
 
 mkdir -p $HOME/.vim/colors
