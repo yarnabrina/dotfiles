@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # default editor
 export VISUAL="vi"
 export EDITOR="vim"

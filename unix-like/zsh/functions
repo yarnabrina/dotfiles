@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # create directory hierarchy and navigate
 function mkcd() {
     mkdir -p $1

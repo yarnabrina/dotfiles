@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Source: https://github.com/zsh-users/antigen/wiki/Commands
 
 ## load bundles

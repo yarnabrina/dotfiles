@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # changing directories
 setopt AUTO_CD  # `cd`` is implied by providing name of directory
 unsetopt CDABLE_VARS  # expanding as predeeded by `~` is skipped

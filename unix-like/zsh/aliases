@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # detect operating system
 platform=${OSTYPE//[0-9.]/}
 

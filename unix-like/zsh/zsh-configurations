@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -16,6 +18,9 @@ antigen init $HOME/.antigenrc
 
 # disabling default ls outputs
 zstyle ":autocomplete:*" min-input 1
+
+# loading miniconda
+source $HOME/miniconda-activations
 
 # enabling powerlevel10k prompt
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
