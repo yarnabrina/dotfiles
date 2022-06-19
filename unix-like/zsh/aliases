@@ -3,6 +3,9 @@
 # detect operating system
 platform=${OSTYPE//[0-9.]/}
 
+# exit shell
+alias e="exit"
+
 # clearing shell
 alias clr="clear"
 
@@ -19,17 +22,13 @@ alias md='mkdir -p'  ## create directory hierarchy
 alias rd='rmdir -p'  ## delete directory hierarchy, if empty
 
 # ls modifications
-sls="-F -h -l"  ## classified human friendly long format
-
-## colour flag
 if [[ $platform == "linux-gnu" ]]; then
-    colour="--color=auto"
+    alias ls="ls -F -h -l --color=auto"  ## ls for non-hidden files
+    alias lsa="ls -A -F -h -l --color=auto"  ## almost complete ls
 elif [[ $platform == "darwin" ]]; then
-    colour="-G"
+    alias ls="ls -F -h -l -G"  ## ls for non-hidden files
+    alias lsa="ls -A -F -h -l -G"  ## almost complete ls
 fi
-
-alias ls="ls $sls $colour"  ## ls for non-hidden files
-alias lsa="ls -A $sls $colour"  ## almost complete ls
 
 # du modifications
 alias du="du -h"  ## human friendly du
@@ -40,9 +39,6 @@ alias map="xargs -n 1"
 
 # coloured grep
 alias grep="grep --color=auto"
-
-# side by side diff
-alias ydiff="diff -y -W $COLUMNS --suppress-common-lines -t"
 
 # find modifications
 alias fd="find . -type d -name"  # find directory

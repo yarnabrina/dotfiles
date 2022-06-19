@@ -1,0 +1,31 @@
+#!/usr/bin/env zsh
+
+alias ppu="python -m pip install --upgrade pip setuptools wheel"
+
+alias ppi="python -m pip install"
+
+alias pcp="python -m pip cache purge"
+
+alias cuc="conda update --name base conda"
+
+alias lce="conda info --envs"
+
+cce() {
+    conda create --name "${1}" "${@:2}"
+}
+
+ace() {
+    conda activate "${1}"
+}
+
+uce() {
+    conda update --name "${1}" --update-all
+}
+
+alias dce="conda deactivate"
+
+rce() {
+    conda remove --name "${1}" --all
+}
+
+alias cca="conda clean --index-cache --packages --tarballs --force-pkgs-dirs --tempfiles --logfiles"

@@ -2,22 +2,27 @@
 
 # create directory hierarchy and navigate
 function mkcd() {
-    mkdir -p $1
-    cd $1
+    mkdir -p "${1}"
+    cd "${1}"
+}
+
+# side by side diff
+function ydiff() {
+    diff -y -W "${COLUMNS}" --suppress-common-lines -t
 }
 
 # fancier diff
 function fdiff() {
-    diff -u -t $1 $2 | diff-so-fancy
+    diff -u -t "${1}" "${2}" | diff-so-fancy
 }
 
 # check if command exists
 function exists() {
-    if ! [ -x "$(command -v $1)" ]; then
-        echo "Failure: $1 not found"
+    if ! [ -x "$(command -v ${1})" ]; then
+        echo "Failure: ${1} not found"
         return 1
     else
-        echo "Success: $(command -v $1)"
+        echo "Success: $(command -v ${1})"
         return 0
     fi
 }

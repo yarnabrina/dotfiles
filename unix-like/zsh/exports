@@ -32,8 +32,5 @@ export LESS_TERMCAP_so="${fg_bold[yellow]}${bg[blue]}"
 export LESS_TERMCAP_ue="${reset_color}"
 export LESS_TERMCAP_us="${fg_bold[green]}"
 
-# path
-export PATH="$HOME/diff-so-fancy:$PATH"  # modifying system path
-
 # word regex
 export WORDCHARS=""  # bash style alpha-numeric word

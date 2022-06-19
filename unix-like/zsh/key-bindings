@@ -4,13 +4,13 @@
 bindkey -e
 
 # [Home] - beginning of line
-bindkey -M emacs '^[[7~' beginning-of-line
-bindkey -M viins '^[[7~' beginning-of-line
-bindkey -M vicmd '^[[7~' beginning-of-line
+bindkey -M emacs "^[[7~" beginning-of-line
+bindkey -M viins "^[[7~" beginning-of-line
+bindkey -M vicmd "^[[7~" beginning-of-line
 
-bindkey -M emacs '^[[H' beginning-of-line
-bindkey -M viins '^[[H' beginning-of-line
-bindkey -M vicmd '^[[H' beginning-of-line
+bindkey -M emacs "^[[H" beginning-of-line
+bindkey -M viins "^[[H" beginning-of-line
+bindkey -M vicmd "^[[H" beginning-of-line
 
 if [[ -n "${terminfo[khome]}" ]]; then
     bindkey -M emacs "${terminfo[khome]}" beginning-of-line
@@ -19,13 +19,13 @@ if [[ -n "${terminfo[khome]}" ]]; then
 fi
 
 # [End] - end of line
-bindkey -M emacs '^[[8~' end-of-line
-bindkey -M viins '^[[8~' end-of-line
-bindkey -M vicmd '^[[8~' end-of-line
+bindkey -M emacs "^[[8~" end-of-line
+bindkey -M viins "^[[8~" end-of-line
+bindkey -M vicmd "^[[8~" end-of-line
 
-bindkey -M emacs '^[[F' end-of-line
-bindkey -M viins '^[[F' end-of-line
-bindkey -M vicmd '^[[F' end-of-line
+bindkey -M emacs "^[[F" end-of-line
+bindkey -M viins "^[[F" end-of-line
+bindkey -M vicmd "^[[F" end-of-line
 
 if [[ -n "${terminfo[kend]}" ]]; then
     bindkey -M emacs "${terminfo[kend]}" end-of-line
@@ -34,9 +34,9 @@ if [[ -n "${terminfo[kend]}" ]]; then
 fi
 
 # [Backspace] - delete backward
-bindkey -M emacs '^?' backward-delete-char
-bindkey -M viins '^?' backward-delete-char
-bindkey -M vicmd '^?' backward-delete-char
+bindkey -M emacs "^?" backward-delete-char
+bindkey -M viins "^?" backward-delete-char
+bindkey -M vicmd "^?" backward-delete-char
 
 # [Delete] - delete forward
 if [[ -n "${terminfo[kdch1]}" ]]; then
@@ -46,29 +46,29 @@ if [[ -n "${terminfo[kdch1]}" ]]; then
 fi
 
 # [Insert] - overwrite next characters
-bindkey -M emacs '^[[2~' overwrite-mode
-bindkey -M viins '^[[2~' overwrite-mode
-bindkey -M vicmd '^[[2~' overwrite-mode
+bindkey -M emacs "^[[2~" overwrite-mode
+bindkey -M viins "^[[2~" overwrite-mode
+bindkey -M vicmd "^[[2~" overwrite-mode
 
 # [Delete] - delete next characters
-bindkey -M emacs '^[[3~' delete-char
-bindkey -M viins '^[[3~' delete-char
-bindkey -M vicmd '^[[3~' delete-char
+bindkey -M emacs "^[[3~" delete-char
+bindkey -M viins "^[[3~" delete-char
+bindkey -M vicmd "^[[3~" delete-char
 
 # [RightArrow] - move cursor after next character
-bindkey -M emacs '^[[C' forward-char
-bindkey -M viins '^[[C' forward-char
-bindkey -M vicmd '^[[C' forward-char
+bindkey -M emacs "^[[C" forward-char
+bindkey -M viins "^[[C" forward-char
+bindkey -M vicmd "^[[C" forward-char
 
 # [LeftArrow] - move cursor before previous character
-bindkey -M emacs '^[[D' backward-char
-bindkey -M viins '^[[D' backward-char
-bindkey -M vicmd '^[[D' backward-char
+bindkey -M emacs "^[[D" backward-char
+bindkey -M viins "^[[D" backward-char
+bindkey -M vicmd "^[[D" backward-char
 
 # [PageUp] - move to previous event in history
-bindkey -M emacs '^[[5~' up-line-or-history
-bindkey -M viins '^[[5~' up-line-or-history
-bindkey -M vicmd '^[[5~' up-line-or-history
+bindkey -M emacs "^[[5~" up-line-or-history
+bindkey -M viins "^[[5~" up-line-or-history
+bindkey -M vicmd "^[[5~" up-line-or-history
 
 if [[ -n "${terminfo[kpp]}" ]]; then
     bindkey -M emacs "${terminfo[kpp]}" up-line-or-history
@@ -77,9 +77,9 @@ if [[ -n "${terminfo[kpp]}" ]]; then
 fi
 
 # [PageDown] - move to next event in history
-bindkey -M emacs '^[[6~' down-line-or-history
-bindkey -M viins '^[[6~' down-line-or-history
-bindkey -M vicmd '^[[6~' down-line-or-history
+bindkey -M emacs "^[[6~" down-line-or-history
+bindkey -M viins "^[[6~" down-line-or-history
+bindkey -M vicmd "^[[6~" down-line-or-history
 
 if [[ -n "${terminfo[knp]}" ]]; then
     bindkey -M emacs "${terminfo[knp]}" down-line-or-history
@@ -122,9 +122,9 @@ bindkey -M viins "^[[3;5~" kill-word
 bindkey -M vicmd "^[[3;5~" kill-word
 
 # [Shift-Tab] - move through completion menu backwards
-bindkey -M emacs '^[[Z' reverse-menu-complete
-bindkey -M viins '^[[Z' reverse-menu-complete
-bindkey -M vicmd '^[[Z' reverse-menu-complete
+bindkey -M emacs "^[[Z" reverse-menu-complete
+bindkey -M viins "^[[Z" reverse-menu-complete
+bindkey -M vicmd "^[[Z" reverse-menu-complete
 
 if [[ -n "${terminfo[kcbt]}" ]]; then
     bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
@@ -133,11 +133,11 @@ if [[ -n "${terminfo[kcbt]}" ]]; then
 fi
 
 # [Ctrl+z] - undo last action
-bindkey -M emacs '^Z' undo
-bindkey -M viins '^Z' undo
-bindkey -M vicmd '^Z' undo
+bindkey -M emacs "^Z" undo
+bindkey -M viins "^Z" undo
+bindkey -M vicmd "^Z" undo
 
 # [Ctrl+y] - redo last action
-bindkey -M emacs '^Y' redo
-bindkey -M viins '^Y' redo
-bindkey -M vicmd '^Y' redo
+bindkey -M emacs "^Y" redo
+bindkey -M viins "^Y" redo
+bindkey -M vicmd "^Y" redo

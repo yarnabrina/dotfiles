@@ -2,29 +2,33 @@
 
 set -Eeuxo pipefail
 
-ln -s $HOME/dotfiles/unix-like/tools/diff-so-fancy $HOME/diff-so-fancy
+ln -s "${HOME}"/dotfiles/unix-like/tools/diff-so-fancy "${HOME}"/diff-so-fancy
 
-mkdir -p $HOME/.vim/colors
-ln -s $HOME/dotfiles/unix-like/tools/papercolor-theme/colors/PaperColor.vim $HOME/.vim/colors
-ln -s $HOME/dotfiles/unix-like/vim/vim-configurations $HOME/.vimrc
+mkdir -p "${HOME}"/.vim/colors
+ln -s "${HOME}"/dotfiles/unix-like/tools/papercolor-theme/colors/PaperColor.vim "${HOME}"/.vim/colors
+ln -s "${HOME}"/dotfiles/unix-like/vim/vim-configurations "${HOME}"/.vimrc
 
-ln -s $HOME/dotfiles/unix-like/git/global-git-attributes $HOME/.gitattributes
-ln -s $HOME/dotfiles/unix-like/git/global-git-ignore-files $HOME/.gitignore
-ln -s $HOME/dotfiles/unix-like/git/global-git-configurations $HOME/.gitconfig
+ln -s "${HOME}"/dotfiles/unix-like/git/global-git-attributes "${HOME}"/.gitattributes
+ln -s "${HOME}"/dotfiles/unix-like/git/global-git-ignore-files "${HOME}"/.gitignore
+ln -s "${HOME}"/dotfiles/unix-like/git/global-git-configurations "${HOME}"/.gitconfig
 
-ln -s $HOME/dotfiles/unix-like/tools/antigen/bin/antigen.zsh $HOME/antigen-loader
-ln -s $HOME/dotfiles/unix-like/zsh/antigen-configurations $HOME/.antigenrc
+ln -s "${HOME}"/dotfiles/unix-like/tools/antigen/bin/antigen.zsh "${HOME}"/antigen-loader
+ln -s "${HOME}"/dotfiles/unix-like/zsh/antigen-configurations "${HOME}"/.antigenrc
 
-ln -s $HOME/dotfiles/unix-like/zsh/aliases $HOME/.aliases
-ln -s $HOME/dotfiles/unix-like/zsh/exports $HOME/.exports
-ln -s $HOME/dotfiles/unix-like/zsh/functions $HOME/.functions
-ln -s $HOME/dotfiles/unix-like/zsh/key-bindings $HOME/.bindings
-ln -s $HOME/dotfiles/unix-like/zsh/options $HOME/.options
+ln -s "${HOME}"/dotfiles/unix-like/zsh/aliases "${HOME}"/.aliases
+ln -s "${HOME}"/dotfiles/unix-like/zsh/exports "${HOME}"/.exports
+ln -s "${HOME}"/dotfiles/unix-like/zsh/functions "${HOME}"/.functions
+ln -s "${HOME}"/dotfiles/unix-like/zsh/key-bindings "${HOME}"/.bindings
+ln -s "${HOME}"/dotfiles/unix-like/zsh/options "${HOME}"/.options
 
-if ! zmodload zsh/langinfo zsh/terminfo || [[ $langinfo[CODESET] != (utf|UTF)(-|)8 || $TERM == (dumb|linux) ]] || (( terminfo[colors] < 256 )); then
-    ln -s $HOME/dotfiles/unix-like/zsh/minimal-powerlevel10k-configurations $HOME/.p10k.zsh
+ln -s "${HOME}"/dotfiles/unix-like/conda/conda-configurations "${HOME}"/.condarc
+ln -s "${HOME}"/dotfiles/unix-like/conda/python-helpers "${HOME}"/miniconda-helpers
+ln -s "${HOME}"/dotfiles/unix-like/conda/conda-activations "${HOME}"/miniconda-activations
+
+if ! zmodload zsh/langinfo zsh/terminfo || [[ "${langinfo[CODESET]}" != (utf|UTF)(-|)8 || "${TERM}" == (dumb|linux) ]] || (( "${terminfo[colors]}" < 256 )); then
+    ln -s "${HOME}"/dotfiles/unix-like/zsh/minimal-powerlevel10k-configurations "${HOME}"/.p10k.zsh
 else
-    ln -s $HOME/dotfiles/unix-like/zsh/full-powerlevel10k-configurations $HOME/.p10k.zsh
+    ln -s "${HOME}"/dotfiles/unix-like/zsh/full-powerlevel10k-configurations "${HOME}"/.p10k.zsh
 fi
 
-ln -s $HOME/dotfiles/unix-like/zsh/zsh-configurations $HOME/.zshrc
+ln -s "${HOME}"/dotfiles/unix-like/zsh/zsh-configurations "${HOME}"/.zshrc

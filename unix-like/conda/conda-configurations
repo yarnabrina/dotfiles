@@ -1,0 +1,34 @@
+# Reference: https://docs.conda.io/projects/conda/en/latest/configuration.html
+
+## channel configuration
+channels: ### the list of conda channels to include for relevant operations
+  - conda-forge
+  - defaults
+
+## basic conda configuration
+envs_dirs: ### the list of directories to search for named environments
+  - ${HOME}/miniconda-environments
+
+## network configuration
+offline: false ### restrict conda to cached download content and file:// based urls
+
+## solver configuration
+auto_update_conda: true ### automatically update conda when a newer or higher priority version is detected
+channel_priority: disabled ### with channel priority disabled, package version takes precedence, and the configured priority of channels is used only to break ties
+pip_interop_enabled: false ### allow the conda solver to interact with non-conda-installed python packages
+
+## package linking and install-time configuration
+non_admin_enabled: true ### allows completion of conda's create, install, update, and remove operations, for non-privileged (non-root or non-administrator) users
+
+## output, prompt, and flow control configuration
+always_yes: false ### automatically choose the 'yes' option whenever asked to proceed with a conda operation
+auto_activate_base: false ### automatically activate the base environment during shell initialization
+auto_stack: 0 ### implicitly use --stack when using activate if current level of nesting is less than or equal to specified value
+notify_outdated_conda: true ### notify if a newer version of conda is detected during a create, install, update, or remove operation
+report_errors: false ### opt in, or opt out, of automatic error reporting to core maintainers
+verbosity: 0 ### sets output log level
+
+# Reference: https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html
+add_pip_as_python_dependency: true ## add pip, wheel, and setuptools as dependencies of Python
+use_pip: true ## use pip when listing packages with conda list
+update_dependencies: true ## update all dependencies to the latest version that is compatible with the environment

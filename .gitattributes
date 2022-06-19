@@ -5,6 +5,9 @@
 # Enable syntax highlighting for files
 aliases linguist-language=sh
 antigen-configurations linguist-language=sh
+conda-activations linguist-language=sh
+conda-configurations linguist-language=yml
+conda-functions linguist-language=sh
 exports linguist-language=sh
 full-powerlevel10k-configurations linguist-language=sh
 functions linguist-language=sh
@@ -15,5 +18,6 @@ key-bindings linguist-language=sh
 install linguist-language=sh
 minimal-powerlevel10k-configurations linguist-language=sh
 options linguist-language=sh
+uninstall linguist-language=sh
 vim-configurations linguist-language=vim
 zsh-configurations linguist-language=sh

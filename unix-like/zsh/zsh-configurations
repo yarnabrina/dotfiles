@@ -1,26 +1,49 @@
 #!/usr/bin/env zsh
 
 # powerlevel10k instant prompt
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+if [[ -r "${XDG_CACHE_HOME:-${HOME}/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-${HOME}/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # custom settings
-source $HOME/.aliases
-source $HOME/.exports
-source $HOME/.functions
-source $HOME/.options
-source $HOME/.bindings
+if [ -f "${HOME}"/.aliases ]; then
+    source "${HOME}"/.aliases
+fi
+
+if [ -f "${HOME}"/.exports ]; then
+    source "${HOME}"/.exports
+fi
+
+if [ -f "${HOME}"/.functions ]; then
+    source "${HOME}"/.functions
+fi
+
+if [ -f "${HOME}"/.options ]; then
+    source "${HOME}"/.options
+fi
+
+if [ -f "${HOME}"/.bindings ]; then
+    source "${HOME}"/.bindings
+fi
 
 # loading antigen
-source $HOME/antigen-loader
-antigen init $HOME/.antigenrc
+if [ -f "${HOME}"/antigen-loader ] && [ -f "${HOME}"/.antigenrc ]; then
+    source "${HOME}"/antigen-loader
+    antigen init "${HOME}"/.antigenrc
 
-# disabling default ls outputs
-zstyle ":autocomplete:*" min-input 1
+    # disabling default ls outputs
+    zstyle ":autocomplete:*" min-input 1
+fi
+
+# adding diff-so-fancy to PATH
+if [ -d "${HOME}"/diff-so-fancy ] && [ -x "${HOME}"/diff-so-fancy/diff-so-fancy ]; then
+    export PATH="${HOME}/diff-so-fancy:$PATH"
+fi
 
 # loading miniconda
-source $HOME/miniconda-activations
+if [ -x "$(command -v conda)" ]; then
+    source "${HOME}"/miniconda-activations
+fi
 
 # enabling powerlevel10k prompt
-[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+[[ ! -f "${HOME}"/.p10k.zsh ]] || source "${HOME}"/.p10k.zsh

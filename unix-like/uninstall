@@ -2,27 +2,31 @@
 
 set -x
 
-rm -rf $HOME/diff-so-fancy
+rm -rf "${HOME}"/diff-so-fancy
 
-rm -rf $HOME/.vim/colors
-rm $HOME/.vimrc
+rm -rf "${HOME}"/.vim/colors
+rm "${HOME}"/.vimrc
 
-rm $HOME/.gitattributes
-rm $HOME/.gitignore
-rm $HOME/.gitconfig
+rm "${HOME}"/.gitattributes
+rm "${HOME}"/.gitignore
+rm "${HOME}"/.gitconfig
 
-rm $HOME/antigen-loader
-rm $HOME/.antigenrc
-rm $HOME/.antigenrc.zwc
-rm -rf $HOME/.antigen
+rm "${HOME}"/antigen-loader
+rm "${HOME}"/.antigenrc
+rm "${HOME}"/.antigenrc.zwc
+rm -rf "${HOME}"/.antigen
 
-rm $HOME/.aliases
-rm $HOME/.exports
-rm $HOME/.functions
-rm $HOME/.bindings
-rm $HOME/.options
+rm "${HOME}"/.aliases
+rm "${HOME}"/.exports
+rm "${HOME}"/.functions
+rm "${HOME}"/.bindings
+rm "${HOME}"/.options
 
-rm $HOME/.p10k.zsh
+rm "${HOME}"/.condarc
+rm "${HOME}"/miniconda-helpers
+rm "${HOME}"/miniconda-activations
 
-rm $HOME/.zshrc
-rm $HOME/.zshrc.zwc
+rm "${HOME}"/.p10k.zsh
+
+rm "${HOME}"/.zshrc
+rm "${HOME}"/.zshrc.zwc
