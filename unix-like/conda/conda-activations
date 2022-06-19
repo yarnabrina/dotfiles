@@ -1,4 +1,26 @@
 #!/usr/bin/env zsh
 
+# setup
+CONDA_DIRECTORY="${HOME}"/miniconda3
+CONDA_EXECUTABLE="${CONDA_DIRECTORY}"/bin/conda
+
+# conda initialisation
+__conda_setup="$(${CONDA_EXECUTABLE} 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "${__conda_setup}"
+else
+    if [ -f "${CONDA_DIRECTORY}/etc/profile.d/conda.sh" ]; then
+        . "${CONDA_DIRECTORY}/etc/profile.d/conda.sh"
+    else
+        export PATH="${CONDA_DIRECTORY}/bin:${PATH}"
+    fi
+fi
+unset __conda_setup
+
+# teardown
+unset CONDA_EXECUTABLE
+unset CONDA_DIRECTORY
+
+# customisation
 source "${HOME}"/miniconda-helpers
 conda activate default
