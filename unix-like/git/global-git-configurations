@@ -11,6 +11,8 @@
     ch = checkout
     chb = checkout -b
 
+    chp = cherry-pick -x
+
     cl = clone --recurse-submodules --shallow-submodules --no-remote-submodules
     cls = clone --depth 1 --recurse-submodules --shallow-submodules --no-remote-submodules
 
