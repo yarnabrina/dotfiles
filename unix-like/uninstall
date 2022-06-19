@@ -13,7 +13,7 @@ rm "${HOME}"/.gitconfig
 
 rm "${HOME}"/antigen-loader
 rm "${HOME}"/.antigenrc
-rm "${HOME}"/.antigenrc.zwc
+rm -f "${HOME}"/.antigenrc.zwc
 rm -rf "${HOME}"/.antigen
 
 rm "${HOME}"/.aliases
@@ -29,4 +29,4 @@ rm "${HOME}"/miniconda-activations
 rm "${HOME}"/.p10k.zsh
 
 rm "${HOME}"/.zshrc
-rm "${HOME}"/.zshrc.zwc
+rm -f "${HOME}"/.zshrc.zwc
