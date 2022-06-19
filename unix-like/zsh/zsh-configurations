@@ -41,7 +41,7 @@ if [ -d "${HOME}"/diff-so-fancy ] && [ -x "${HOME}"/diff-so-fancy/diff-so-fancy 
 fi
 
 # loading miniconda
-if [ -d "${HOME}"/miniconda3 ] && [ -x "${CONDA_DIRECTORY}"/bin/conda ]; then
+if [ -d "${HOME}"/miniconda3 ] && [ -x "${HOME}"/miniconda3/bin/conda ]; then
     source "${HOME}"/miniconda-activations
 fi
 
