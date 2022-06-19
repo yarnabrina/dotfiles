@@ -19,7 +19,7 @@ ace() {
 }
 
 uce() {
-    conda update --name "${1}" --update-all
+    conda update --name "${1:-${CONDA_DEFAULT_ENV}}" --update-all
 }
 
 alias dce="conda deactivate"
