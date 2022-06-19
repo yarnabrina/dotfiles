@@ -31,8 +31,7 @@
 
     h = help --man
 
-    lg = log --oneline
-    lgp = log --pretty=format:'%Cred%h%Creset %Cgreen(%ad) %C(bold blue)<%an>%Creset %s %C(auto)%d%Creset'
+    lg = log --pretty=format:'%Cred%h%Creset %Cgreen(%ad) %C(bold blue)<%an>%Creset %s %C(auto)%d%Creset'
     ll = log -1 HEAD --stat
 
     m = merge
