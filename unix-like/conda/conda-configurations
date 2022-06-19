@@ -2,8 +2,8 @@
 
 ## channel configuration
 channels: ### the list of conda channels to include for relevant operations
-  - conda-forge
   - defaults
+  - conda-forge
 
 ## basic conda configuration
 envs_dirs: ### the list of directories to search for named environments
