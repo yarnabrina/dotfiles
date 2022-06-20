@@ -34,3 +34,6 @@ export LESS_TERMCAP_us="${fg_bold[green]}"
 
 # word regex
 export WORDCHARS=""  # bash style alpha-numeric word
+
+# default LESS flags
+export LESS="--tabs=4 -F -R"
