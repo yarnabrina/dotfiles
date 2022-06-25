@@ -60,8 +60,8 @@
     sls = shortlog  --numbered --summary --email
 
     sma = submodule add --depth 1
-    smu = submodule update --recursive --depth 1 --single-branch
-    smur = submodule update --remote --recursive --depth 1 --single-branch
+    smu = submodule update --depth 1 --single-branch
+    smur = submodule update --remote --depth 1 --single-branch
 
     stu = stash push --include-untracked
     stus = stash push --keep-index --include-untracked
