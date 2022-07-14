@@ -35,7 +35,7 @@ clean: clean_ipynb clean_pycache clean_pytest
 
 .ONESHELL:
 .PHONY: format_autoflake
-format_autoflake:
+format_autoflake: virtualenv
 	source virtualenv/bin/activate
 	autoflake \
 	--in-place \
@@ -48,7 +48,7 @@ format_autoflake:
 
 .ONESHELL:
 .PHONY: format_black
-format_black:
+format_black: virtualenv
 	source virtualenv/bin/activate
 	black \
 	--line-length 99 \
@@ -57,7 +57,7 @@ format_black:
 
 .ONESHELL:
 .PHONY: format_isort
-format_isort:
+format_isort: virtualenv
 	source virtualenv/bin/activate
 	isort \
 	--overwrite-in-place \
@@ -68,7 +68,7 @@ format_isort:
 
 .ONESHELL:
 .PHONY: format_pyupgrade
-format_pyupgrade:
+format_pyupgrade: virtualenv
 	source virtualenv/bin/activate
 	pyupgrade \
 	--py39-plus \
@@ -150,12 +150,12 @@ lint_vulture: virtualenv
 .PHONY: lint
 lint: lint_bandit lint_flake8 lint_pydocstyle lint_pylint lint_vulture
 
-## vitualenv
+## virtualenv
 ##     create isolated environment
 ##     install up-to-date dependencies
 ##     install root package as editable
 .ONESHELL:
-vitualenv:
+virtualenv:
 	python3 -m venv virtualenv
 	echo "*" > virtualenv/.gitignore
 	source virtualenv/bin/activate
