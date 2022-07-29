@@ -6,8 +6,8 @@ export EDITOR="vim"
 
 # history
 export HISTFILE="$HOME/.zsh_history"  # location of history file
-export HISTSIZE=10000  # amount of history in memory
-export SAVEHIST=5000  # amount of history in file
+export HISTSIZE=100000  # amount of history in memory
+export SAVEHIST=50000  # amount of history in file
 
 # language
 export LANG="en_US.UTF-8"  # setting default language
