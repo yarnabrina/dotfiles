@@ -1,0 +1,235 @@
+[alias]
+    a = add
+    aa = add --all
+
+    b = branch --verbose --verbose
+    br = branch --remotes --verbose
+    ba = branch --all --verbose --verbose
+    bd = branch --delete
+    bdf = branch --delete --force
+
+    ch = checkout
+    chb = checkout -b
+
+    chp = cherry-pick -x
+
+    cl = clone --recurse-submodules --shallow-submodules --no-remote-submodules
+    cls = clone --depth 1 --recurse-submodules --shallow-submodules --no-remote-submodules
+
+    cm = commit
+    cma = commit --ammend
+    cms = commit --message
+
+    cna = config --get-regexp alias
+    cnl = config --show-origin --show-scope --list
+
+    d = diff
+    dn = diff --name-status
+    ds = diff --cached
+    dw = diff HEAD
+    dr = diff @{upstream}
+
+    f = fetch --all --update-shallow --prune --prune-tags --tags --recurse-submodules=on-demand
+
+    h = help --man
+
+    lg = log --pretty=format:'%Cred%aN%Creset committed %Cblue%h%Creset on %Cgreen%as%Creset with title %Cblue%s%Creset %Cred%d%Creset'
+    ll = log -1 HEAD --stat
+
+    m = merge --autostash
+    ma = merge --abort
+
+    pl = pull --no-rebase
+    plr = pull --rebase --autostash
+
+    ps = push
+    psf = push --force
+    psu = push --set-upstream origin HEAD
+
+    rv = remote --verbose
+
+    rs = reset --soft
+    rh = reset --hard
+    rd = reset HEAD --
+
+    rst = restore
+    rsts = restore --staged
+    rstw = restore --staged --worktree
+
+    sl = shortlog
+    sls = shortlog --numbered --summary --email
+
+    sma = submodule add --depth 1
+    smu = submodule update --depth 1 --single-branch
+    smur = submodule update --remote --depth 1 --single-branch
+
+    stu = stash push --include-untracked
+    stus = stash push --keep-index --include-untracked
+    stp = stash pop
+    stps = stash pop --index
+
+    st = status --short --branch --ahead-behind
+
+    sw = switch
+    swc = switch --create
+
+    # Reference: https://github.com/so-fancy/diff-so-fancy/blob/master/pro-tips.md#raw-patches
+    patch = !git --no-pager diff --no-color
+
+[apply]
+    # respect all whitespace differences
+    ignoreWhitespace = no
+
+    # warn and solve whitespace errors
+    whitespace = fix
+
+[branch]
+    # show most recently changed branches first
+    sort = -committerdate
+
+[clone]
+    # default remote name
+    defaultRemoteName = origin
+
+[color]
+    # use colour if output destination is terminal
+    ui = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+    upstream = cyan
+
+[color "diff"]
+    meta = yellow
+    frag = magenta bold
+    func = 146 bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[core]
+    # no output conversion
+    attributesFile = ~/.gitattributes
+
+    # default text editor
+    editor = vim
+
+    # global .gitignore file
+    excludesFile = ~/.gitignore
+
+    # prevent showing files whose names contain non-ASCII symbols as unversioned
+    # Reference: http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+    precomposeunicode = false
+
+    # ignoring ctime differences between the index and the working tree
+    trustctime = false
+
+    # speed up commands involving untracked files such as `git status`
+    # Reference: https://git-scm.com/docs/git-update-index#_untracked_cache
+    untrackedCache = true
+
+    # raise for spaces before tabs and trailing whitespaces
+    whitespace = -indent-with-non-tab,space-before-tab,trailing-space
+
+[diff]
+    # extending patience with low occurrence common elements
+    algorithm = histogram
+
+    # format of amount of changes for each sub-directory
+    dirstat = files,noncumulative
+
+    # using descriptive initials instead of a/b
+    mnemonicPrefix = true
+
+    # detect copies as well as renames
+    renames = copies
+
+    # highlight moved lines
+    colorMoved = dimmed-zebra
+
+[diff-so-fancy]
+    # remove colour for first block of an empty line
+    markEmptyLines = false
+
+[difftool]
+    # skip prompt before invocation
+    prompt = false
+
+[fetch]
+    # maximum number of simultaneous fetch operations (reasonable default)
+    parallel = 0
+
+[help]
+    # suggest correction of mistyped commands
+    autocorrect = prompt
+
+[init]
+    # default branch name
+    defaultBranch = main
+
+[log]
+    # abbreviate commit identifiers
+    abbrevCommit = true
+
+    # format of commit timestamp
+    date = human
+
+    # show ref names of commits
+    decorate = short
+
+    # history of single file
+    follow = true
+
+[merge]
+    # include one-line descriptions from at most 20 commits
+    log = true
+
+[mergetool]
+    # clean original file with conflict markers
+    keepBackup = false
+
+    # skip prompt before invocation
+    prompt = false
+
+[pager]
+    # fancier diff
+    diff = diff-so-fancy | less
+
+[push]
+    # action to take if no refspec is given
+    default = upstream
+
+    # submodules changed in revisions to be pushed are pushed
+    recurseSubmodules = on-demand
+
+[rerere]
+    # resolved conflicts are recorded
+    enabled = true
+
+[submodule]
+    # maximum number of simultaneous submodules fetch/clone operations (reasonable default)
+    fetchJobs = 0
+
+[user]
+    # name of author and committer
+    name = Anirban Ray
+
+    # email of author and committer
+    email =
+
+    # avoid guessing defaults
+    useConfigOnly = true

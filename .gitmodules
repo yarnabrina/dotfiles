@@ -1,0 +1,16 @@
+[submodule "unix-like/tools/antigen"]
+    path = unix-like/tools/antigen
+    url = https://github.com/zsh-users/antigen.git
+    branch = develop
+[submodule "unix-like/tools/diff-so-fancy"]
+    path = unix-like/tools/diff-so-fancy
+    url = https://github.com/so-fancy/diff-so-fancy.git
+    branch = master
+[submodule "unix-like/tools/gitstatus"]
+	path = unix-like/tools/gitstatus
+	url = https://github.com/romkatv/gitstatus.git
+	branch = master
+[submodule "unix-like/tools/papercolor-theme"]
+    path = unix-like/tools/papercolor-theme
+    url = https://github.com/NLKNguyen/papercolor-theme.git
+    branch = master

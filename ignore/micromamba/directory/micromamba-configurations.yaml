@@ -1,0 +1,236 @@
+# Reference: https://github.com/mamba-org/mamba/blob/3a5cd599d68bdcd74d9e64e82c221dcd2f6fdafd/libmamba/src/api/configuration.cpp#L969-L1582
+## micromamba config list --long-descriptions --groups --sources --all
+
+# ######################################################
+# #                Basic Configuration                 #
+# ######################################################
+
+# envs_dirs
+#   Possible locations of named environments
+envs_dirs:
+  - ${CONDA_ENVIRONMENTS_DIRECTORY}
+
+# pkgs_dirs
+#   Possible locations of packages caches
+
+# platform
+#   The plaftorm description points what channels
+#   subdir/platform have to be fetched for package solving.
+#   This can be 'linux-64' or similar.
+
+# experimental
+#   Enable experimental features that may be still.
+#   under active development and not stable yet.
+experimental: false
+
+# ######################################################
+# #               Channels Configuration               #
+# ######################################################
+
+# channels
+#   The list of channels where the packages will be searched for.
+#   See also 'channel_priority'.
+channels:
+  - defaults
+  - conda-forge
+
+# channel_alias
+#   The prepended url location to associate with channel names
+
+# default_channels
+#   The list of channel names and/or urls used for the 'defaults'
+#   multichannel.
+default_channels:
+  - https://repo.anaconda.com/pkgs/main
+
+# custom_channels
+#   A dictionary with name: url to use for custom channels.
+
+# custom_multichannels
+#   A dictionary with name: list of names/urls to use for custom multichannels.
+
+# override_channels_enabled
+#   Permit use of the --overide-channels command-line flag
+
+# ######################################################
+# #               Network Configuration                #
+# ######################################################
+
+# cacert_path
+#   Path (file or directory) SSL certificate(s) to use whe
+#   'ssl_verify' in turned on but not set with path to certs.
+#   WARNING: overrides 'ssl_verify' if provided and 'ssl_verify'
+#   also contains a path to SSL certificates.
+
+# local_repodata_ttl
+#   Repodata time-to-live
+#   For a value of 0, always fetch remote repodata (HTTP 304
+#   responses respected).
+#   For a value of 1, respect the HTTP Cache-Control max-age header.
+#   Any other positive integer values is the number of seconds to
+#   locally cache repodata before checking the remote server for
+#   an update.
+
+# offline
+#   Force use cached repodata
+
+# ssl_no_revoke
+#   This option tells curl to disable certificate revocation checks.
+#   It's only working for Windows back-end.
+#   WARNING: this option loosens the SSL security.
+
+# ssl_verify
+#   'ssl_verify' can be either an empty string (regular SSL verification),
+#   the string "<false>" to indicate no SSL verification, or a path to
+#   a directory with cert files, or a cert file..
+
+# proxy_servers
+#   'proxy_servers' should be a dictionary where the key is either in the form of
+#   scheme://hostname or just a scheme for which the proxy server should be used and
+#   the value is the url of the proxy server, optionally with username and password
+#   in the form of scheme://username:password@hostname.
+
+# ######################################################
+# #                Solver Configuration                #
+# ######################################################
+
+# channel_priority
+#   Accepts values of 'strict' and 'disabled'. The default
+#   value is 'strict'. With strict channel priority, packages in lower
+#   priority channels are not considered if a package with the same name
+#   appears in a higher priority channel.
+#   With channel priority disabled, package version takes precedence, and the
+#   configured priority of channels is used only to break ties. In
+#   previous versions of conda, this parameter was configured as either
+#   True or False. True is now an alias to 'flexible'.
+channel_priority: strict
+
+# no_py_pin
+#   Do not automatically pin Python when not present in
+#   the packages specifications, which is the default
+#   behavior.
+no_py_pin: true
+
+# add_pip_as_python_dependency
+#   Automatically add pip as a Python dependency
+add_pip_as_python_dependency: true
+
+# pinned_packages
+#   A list of package specs to pin for every environment resolution
+
+# allow_uninstall
+#   Allow uninstall when installing or updating packages. Default is true.
+allow_uninstall: true
+
+# allow_downgrade
+#   Allow downgrade when installing packages. Default is false.
+allow_downgrade: true
+
+# ######################################################
+# #       Extract, Link & Install Configuration        #
+# ######################################################
+
+# download_threads
+#   Defines the number of threads for package download.
+#   It has to be strictly positive.
+
+# extract_threads
+#   Defines the number of threads for package extraction.
+#   Positive number gives the number of threads, negative number gives
+#   host max concurrency minus the value, zero (default) is the host max
+#   concurrency value.
+
+# allow_softlinks
+#   Allow to use soft-links (symlinks) when hard-links are not possible,
+#   such as when installing on a different filesystem than the one that
+#   the package cache is on.
+
+# always_copy
+#   Register a preference that files be copied into a prefix during
+#   install rather than hard-linked.
+
+# always_softlink
+#   Register a preference that files be soft-linked (symlinked) into a
+#   prefix during install rather than hard-linked. The link source is the
+#   package cache from where the package is being linked.
+#   !WARNING: Using this option can result in corruption of long-lived
+#   environments due to broken links (deleted cache).
+
+# shortcuts
+#   Install start-menu shortcuts on Windows (not implemented on Linux / macOS)
+
+# safety_checks
+#   Enforce available safety guarantees during package installation. The
+#   value must be one of 'enabled', 'warn', or 'disabled'.
+
+# extra_safety_checks
+#   Spend extra time validating package contents. Currently, runs sha256
+#   verification on every file within each package during installation.
+
+# verify_artifacts
+#   Spend extra time validating package contents. It consists of running
+#   cryptographic verifications on channels and packages metadata.
+
+# lock_timeout
+#   Lockfile timeout for blocking mode when waiting for another process
+#   to release the path. Default is 0 (no timeout)
+
+# use_lockfiles
+#   By default, mamba uses lockfiles on the filesystem to synchronize access to
+#   shared resources for multiple mamba processes (such as the package cache).
+#   However, some filesystems do not support file locking and locks do not always
+#   make sense - like when on an HPC.  Default is true (use a lockfile
+
+# compile_pyc
+#   Defines if PYC files will be compiled or not
+
+# ######################################################
+# #   Output, Prompt and Flow Control Configuration    #
+# ######################################################
+
+# always_yes
+#   Automatically answer yes on prompted questions
+always_yes: false
+
+# auto_activate_base
+#   Automatically activate the base environment during shell
+#   initialization.
+auto_activate_base: false
+
+# log_level
+#   Set globally the log level of all loggers. Log level can
+#   be one of {'off', 'fatal', 'error', 'warning', 'info',
+#   'debug', 'trace'}.
+
+# log_backtrace
+#   Set the log backtrace size. It will replay the n last
+#   logs if an error is thrown during the execution.
+
+# log_pattern
+#   Set the log pattern.
+
+# json
+#   Report all output as json
+
+# changeps1
+#   When using activate, change the command prompt ($PS1) to include the activated environment.
+changeps1: true
+
+# shell_completion
+#   Enable or disable shell autocompletion (currently works for bash and zsh).
+shell_completion: true
+
+# env_prompt
+#   Currently supported template variables are '{prefix}', '{name}', and '{default_env}'.
+#   '{prefix}' is the absolute path to the active environment. '{name}' is the basename
+#   of the active environment prefix. '{default_env}' holds the value of '{name}' if the
+#   active environment is a named environment ('-n' flag), or otherwise holds the value
+#   of '{prefix}'.
+env_prompt: "({name})"
+
+# show_banner
+#   Show the banner
+show_banner: false
+
+# quiet
+#   Set quiet mode (print less output)
