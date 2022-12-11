@@ -226,7 +226,7 @@ shell_completion: true
 #   of the active environment prefix. '{default_env}' holds the value of '{name}' if the
 #   active environment is a named environment ('-n' flag), or otherwise holds the value
 #   of '{prefix}'.
-env_prompt: "({name})"
+env_prompt: "({name}) "
 
 # show_banner
 #   Show the banner
