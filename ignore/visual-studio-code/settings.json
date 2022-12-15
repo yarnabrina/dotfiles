@@ -1,6 +1,5 @@
 {
     "autoDocstring.docstringFormat": "numpy",
-    "breadcrumbs.filePath": "last",
     "comments.openView": "file",
     "csv-preview.capitalizeHeaders": false,
     "csv-preview.skipComments": true,
@@ -27,7 +26,6 @@
     "editor.matchBrackets": "near",
     "editor.maxTokenizationLineLength": 5000,
     "editor.minimap.enabled": false,
-    "editor.multiCursorModifier": "ctrlCmd",
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [
         {
