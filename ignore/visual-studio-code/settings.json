@@ -194,6 +194,7 @@
     "terminal.integrated.cursorStyle": "underline",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.fontSize": 16,
+    "terminal.integrated.inheritEnv": false,
     "terminal.integrated.persistentSessionReviveProcess": "never",
     "terminal.integrated.rightClickBehavior": "default",
     "update.enableWindowsBackgroundUpdates": false,
