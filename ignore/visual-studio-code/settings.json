@@ -80,7 +80,9 @@
         "--line-length",
         "99"
     ],
+    "isort.check": true,
     "jupyter.askForKernelRestart": false,
+    "jupyter.disableJupyterAutoStart": true,
     "jupyter.experiments.enabled": false,
     "jupyter.exportWithOutputEnabled": true,
     "jupyter.themeMatplotlibPlots": true,
