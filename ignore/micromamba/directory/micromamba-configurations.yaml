@@ -7,8 +7,6 @@
 
 # envs_dirs
 #   Possible locations of named environments
-envs_dirs:
-  - ${CONDA_ENVIRONMENTS_DIRECTORY}
 
 # pkgs_dirs
 #   Possible locations of packages caches
@@ -63,7 +61,6 @@ default_channels:
 #   also contains a path to SSL certificates.
 
 # local_repodata_ttl
-#   Repodata time-to-live
 #   For a value of 0, always fetch remote repodata (HTTP 304
 #   responses respected).
 #   For a value of 1, respect the HTTP Cache-Control max-age header.
@@ -103,7 +100,6 @@ default_channels:
 #   configured priority of channels is used only to break ties. In
 #   previous versions of conda, this parameter was configured as either
 #   True or False. True is now an alias to 'flexible'.
-channel_priority: strict
 
 # no_py_pin
 #   Do not automatically pin Python when not present in
@@ -190,7 +186,6 @@ allow_downgrade: true
 
 # always_yes
 #   Automatically answer yes on prompted questions
-always_yes: false
 
 # auto_activate_base
 #   Automatically activate the base environment during shell
@@ -209,16 +204,17 @@ auto_activate_base: false
 # log_pattern
 #   Set the log pattern.
 
+# experimental_sat_error_message
+#   Enable experimental satisfiability (conflict) error messages
+
 # json
 #   Report all output as json
 
 # changeps1
 #   When using activate, change the command prompt ($PS1) to include the activated environment.
-changeps1: true
 
 # shell_completion
 #   Enable or disable shell autocompletion (currently works for bash and zsh).
-shell_completion: true
 
 # env_prompt
 #   Currently supported template variables are '{prefix}', '{name}', and '{default_env}'.
@@ -226,7 +222,6 @@ shell_completion: true
 #   of the active environment prefix. '{default_env}' holds the value of '{name}' if the
 #   active environment is a named environment ('-n' flag), or otherwise holds the value
 #   of '{prefix}'.
-env_prompt: "({name}) "
 
 # show_banner
 #   Show the banner
