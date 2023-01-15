@@ -7,9 +7,9 @@
     url = https://github.com/so-fancy/diff-so-fancy.git
     branch = master
 [submodule "unix-like/tools/gitstatus"]
-	path = unix-like/tools/gitstatus
-	url = https://github.com/romkatv/gitstatus.git
-	branch = master
+    path = unix-like/tools/gitstatus
+    url = https://github.com/romkatv/gitstatus.git
+    branch = master
 [submodule "unix-like/tools/papercolor-theme"]
     path = unix-like/tools/papercolor-theme
     url = https://github.com/NLKNguyen/papercolor-theme.git
