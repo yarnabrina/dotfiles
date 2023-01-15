@@ -9,6 +9,7 @@
     "debug.showBreakpointsInOverviewRuler": true,
     "debug.showInStatusBar": "always",
     "debug.terminal.clearBeforeReusing": true,
+    "editor.accessibilitySupport": "off",
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.copyWithSyntaxHighlighting": false,
     "editor.dragAndDrop": false,
@@ -71,12 +72,14 @@
     "gitlens.telemetry.enabled": false,
     "interactiveWindow.restore": true,
     "isort.args": [
+        // "--overwrite-in-place",
         "--profile",
         "black",
         "--atomic",
         "--float-to-top",
         "--line-length",
-        "99"
+        "99",
+        "--remove-redundant-aliases"
     ],
     "isort.check": true,
     "jupyter.askForKernelRestart": false,
@@ -115,10 +118,13 @@
     ],
     "python.formatting.provider": "black",
     "python.linting.banditArgs": [
+        // "--recursive",
+        // "--severity-level",
+        // "high",
         "--confidence-level",
         "high"
     ],
-    "python.linting.banditEnabled": true,
+    "python.linting.banditEnabled": false,
     "python.linting.flake8Args": [
         "--extend-ignore",
         "E203",
@@ -128,31 +134,50 @@
         "99"
     ],
     "python.linting.flake8Enabled": true,
+    "python.linting.mypyArgs": [
+        "--ignore-missing-imports",
+        "--strict"
+    ],
+    "python.linting.mypyEnabled": false,
     "python.linting.pydocstyleArgs": [
         "--convention",
         "numpy"
     ],
-    "python.linting.pydocstyleEnabled": true,
+    "python.linting.pydocstyleEnabled": false,
     "python.linting.pylintArgs": [
         "--enable-all-extensions",
+        // "--persistent",
+        // "no",
         "--suggestion-mode",
         "yes",
+        // "--recursive",
+        // "yes",
+        // "--output-format",
+        // "colorized",
         "--reports",
         "no",
-        "--score",
-        "no",
-        "--confidence",
-        "HIGH",
+        // "--score",
+        // "yes",
         "--enable",
         "all",
+        "--disable",
+        "import-error",
         "--logging-format-style",
         "new",
         "--init-import",
         "no",
         "--allow-global-unused-variables",
-        "no",
+        "yes",
         "--max-line-length",
-        "99"
+        "99",
+        "--ignore-comments",
+        "yes",
+        "--ignore-docstrings",
+        "yes",
+        "--ignore-imports",
+        "yes",
+        "--ignore-signatures",
+        "yes"
     ],
     "python.linting.pylintEnabled": true,
     "python.terminal.activateEnvInCurrentTerminal": true,
@@ -179,8 +204,8 @@
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
     "spellright.documentTypes": [
-        "markdown",
         "latex",
+        "markdown",
         "plaintext",
         "python"
     ],
