@@ -134,6 +134,12 @@ default_channels:
 # #
 # repodata_threads: 0
 
+# # fetch_threads (int)
+# #   Threads to use when downloading packages.  When not set, defaults to
+# #   None, which uses the default ThreadPoolExecutor behavior.
+# #
+# fetch_threads: 5
+
 # ######################################################
 # ##            Basic Conda Configuration             ##
 # ######################################################
@@ -278,7 +284,6 @@ envs_dirs:
 # #   True or False. True is now an alias to 'flexible'.
 # #
 # channel_priority: flexible
-channel_priority: strict
 
 # # create_default_packages (sequence: primitive)
 # #   env var string delimiter: ','
@@ -286,7 +291,7 @@ channel_priority: strict
 # #
 # create_default_packages: []
 create_default_packages:
-  - python>=3.7
+  - python>=3.8
 
 # # disallowed_packages (sequence: primitive)
 # #   aliases: disallow
@@ -323,13 +328,14 @@ create_default_packages:
 # #
 # track_features: []
 
-# # experimental_solver (ExperimentalSolverChoice)
+# # solver (str)
+# #   aliases: experimental_solver
 # #   A string to choose between the different solver logics implemented in
 # #   conda. A solver logic takes care of turning your requested packages
 # #   into a list of specs to add and/or remove from a given environment,
 # #   based on their dependencies and specified constraints.
 # #
-# experimental_solver: classic
+# solver: classic
 
 # ######################################################
 # ##  Package Linking and Install-time Configuration  ##
@@ -475,7 +481,6 @@ create_default_packages:
 # #   conda operation, such as when running `conda install`.
 # #
 # always_yes:
-always_yes: false
 
 # # auto_activate_base (bool)
 # #   Automatically activate the base environment during shell
@@ -509,7 +514,6 @@ auto_activate_base: false
 # #   method.
 # #
 # env_prompt: '({default_env}) '
-env_prompt: '({name}) '
 
 # # json (bool)
 # #   Ensure all output written to stdout is structured json.
@@ -568,3 +572,4 @@ report_errors: false
 # #   notices, set this to 0.
 # #
 # number_channel_notices: 5
+
