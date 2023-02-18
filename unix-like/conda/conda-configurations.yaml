@@ -1,5 +1,4 @@
-# Reference: https://docs.conda.io/projects/conda/en/latest/configuration.html
-## conda config --describe
+# Reference: conda config --describe
 
 # ######################################################
 # ##              Channel Configuration               ##
