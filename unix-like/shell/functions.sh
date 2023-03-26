@@ -6,7 +6,6 @@ source "${FUNCTIONS_DIRECTORY}"/others.sh
 source "${FUNCTIONS_DIRECTORY}"/pip-helpers.sh
 source "${FUNCTIONS_DIRECTORY}"/pre-commit-helpers.sh
 source "${FUNCTIONS_DIRECTORY}"/python-helpers.sh
-source "${FUNCTIONS_DIRECTORY}"/venv-helpers.sh
 
 # teardown
 unset FUNCTIONS_DIRECTORY
