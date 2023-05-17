@@ -17,7 +17,8 @@
     cls = clone --depth 1 --recurse-submodules --shallow-submodules --no-remote-submodules
 
     cm = commit
-    cma = commit --ammend
+    cma = commit --amend
+    cmas = commit --amend --message
     cms = commit --message
 
     cna = config --get-regexp alias
