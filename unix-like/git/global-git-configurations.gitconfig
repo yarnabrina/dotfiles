@@ -34,7 +34,7 @@
     h = help --man
 
     lg = log --pretty=format:'%Cred%aN%Creset committed %Cblue%h%Creset on %Cgreen%as%Creset with title %Cblue%s%Creset %Cred%d%Creset'
-    ll = log -1 HEAD --stat
+    ll = log -1 --stat
 
     m = merge --autostash
     ma = merge --abort
