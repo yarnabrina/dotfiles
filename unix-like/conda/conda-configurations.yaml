@@ -139,6 +139,12 @@ default_channels:
 # #
 # fetch_threads: 5
 
+# # experimental (sequence: primitive)
+# #   env var string delimiter: ','
+# #   List of experimental features to enable.
+# #
+# experimental: []
+
 # ######################################################
 # ##            Basic Conda Configuration             ##
 # ######################################################
@@ -335,6 +341,7 @@ create_default_packages:
 # #   based on their dependencies and specified constraints.
 # #
 # solver: classic
+solver: libmamba
 
 # ######################################################
 # ##  Package Linking and Install-time Configuration  ##
@@ -571,4 +578,3 @@ report_errors: false
 # #   notices, set this to 0.
 # #
 # number_channel_notices: 5
-
