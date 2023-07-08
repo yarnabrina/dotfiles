@@ -45,7 +45,6 @@
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 120,
     "editor.wrappingIndent": "indent",
-    "errorLens.enabled": false,
     "explorer.autoReveal": "focusNoScroll",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
@@ -55,7 +54,6 @@
     "extensions.closeExtensionDetailsOnViewChange": true,
     "extensions.ignoreRecommendations": true,
     "files.autoGuessEncoding": true,
-    "files.autoSave": "afterDelay",
     "git.autoRepositoryDetection": false,
     "git.autoStash": true,
     "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
@@ -68,9 +66,7 @@
     "gitlens.showWhatsNewAfterUpgrades": false,
     "gitlens.statusBar.enabled": false,
     "gitlens.telemetry.enabled": false,
-    "interactiveWindow.restore": true,
     "isort.args": [
-        // "--overwrite-in-place",
         "--profile",
         "black",
         "--atomic",
@@ -117,9 +113,6 @@
     ],
     "python.formatting.provider": "black",
     "python.linting.banditArgs": [
-        // "--recursive",
-        // "--severity-level",
-        // "high",
         "--confidence-level",
         "high"
     ],
@@ -134,7 +127,8 @@
     ],
     "python.linting.flake8Enabled": true,
     "python.linting.mypyArgs": [
-        "--strict"
+        "--strict",
+        "--ignore-missing-imports"
     ],
     "python.linting.mypyEnabled": false,
     "python.linting.pydocstyleArgs": [
@@ -144,12 +138,10 @@
     "python.linting.pydocstyleEnabled": false,
     "python.linting.pylintArgs": [
         "--enable-all-extensions",
-        // "--recursive",
-        // "yes",
-        // "--output-format",
-        // "colorized",
         "--enable",
         "all",
+        "--disable",
+        "logging-fstring-interpolation",
         "--logging-format-style",
         "new",
         "--max-line-length",
