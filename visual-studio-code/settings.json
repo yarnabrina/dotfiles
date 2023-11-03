@@ -1,5 +1,11 @@
 {
     "autoDocstring.docstringFormat": "numpy",
+    "black-formatter.args": [
+        "--line-length",
+        "99",
+        "--safe"
+    ],
+    "black-formatter.importStrategy": "fromEnvironment",
     "comments.openView": "file",
     "csv-preview.capitalizeHeaders": false,
     "csv-preview.skipComments": true,
@@ -54,6 +60,15 @@
     "extensions.closeExtensionDetailsOnViewChange": true,
     "extensions.ignoreRecommendations": true,
     "files.autoGuessEncoding": true,
+    "flake8.args": [
+        "--extend-ignore",
+        "E203",
+        "--per-file-ignores",
+        "__init__.py:F401",
+        "--max-line-length",
+        "99"
+    ],
+    "flake8.importStrategy": "fromEnvironment",
     "git.autoRepositoryDetection": false,
     "git.autoStash": true,
     "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
@@ -76,6 +91,7 @@
         "--remove-redundant-aliases"
     ],
     "isort.check": true,
+    "isort.importStrategy": "fromEnvironment",
     "jupyter.askForKernelRestart": false,
     "jupyter.disableJupyterAutoStart": true,
     "jupyter.experiments.enabled": false,
@@ -85,6 +101,11 @@
     "markdown.validate.enabled": true,
     "material-icon-theme.activeIconPack": "none",
     "merge-conflict.autoNavigateNextConflict.enabled": true,
+    "mypy-type-checker.args": [
+        "--strict",
+        "--ignore-missing-imports"
+    ],
+    "mypy-type-checker.importStrategy": "fromEnvironment",
     "notebook.cellToolbarVisibility": "hover",
     "notebook.consolidatedRunButton": true,
     "notebook.diff.ignoreMetadata": true,
@@ -103,40 +124,7 @@
     "path-intellisense.autoTriggerNextSuggestion": true,
     "path-intellisense.showHiddenFiles": true,
     "problems.showCurrentInStatus": true,
-    "python.analysis.completeFunctionParens": true,
-    "python.analysis.typeCheckingMode": "basic",
-    "python.experiments.enabled": false,
-    "python.formatting.blackArgs": [
-        "--line-length",
-        "99",
-        "--safe"
-    ],
-    "python.formatting.provider": "black",
-    "python.linting.banditArgs": [
-        "--confidence-level",
-        "high"
-    ],
-    "python.linting.banditEnabled": false,
-    "python.linting.flake8Args": [
-        "--extend-ignore",
-        "E203",
-        "--per-file-ignores",
-        "__init__.py:F401",
-        "--max-line-length",
-        "99"
-    ],
-    "python.linting.flake8Enabled": true,
-    "python.linting.mypyArgs": [
-        "--strict",
-        "--ignore-missing-imports"
-    ],
-    "python.linting.mypyEnabled": false,
-    "python.linting.pydocstyleArgs": [
-        "--convention",
-        "numpy"
-    ],
-    "python.linting.pydocstyleEnabled": false,
-    "python.linting.pylintArgs": [
+    "pylint.args": [
         "--enable-all-extensions",
         "--enable",
         "all",
@@ -147,7 +135,10 @@
         "--max-line-length",
         "99"
     ],
-    "python.linting.pylintEnabled": true,
+    "pylint.importStrategy": "fromEnvironment",
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.experiments.enabled": false,
     "python.terminal.activateEnvInCurrentTerminal": true,
     "python.testing.pytestArgs": [
         "--doctest-modules",
@@ -158,6 +149,17 @@
     "pythonIndent.trimLinesWithOnlyWhitespace": true,
     "rainbow_csv.rbql_with_headers_by_default": true,
     "redhat.telemetry.enabled": false,
+    "ruff.importStrategy": "useBundled",
+    "ruff.lint.args": [
+        "--fix",
+        "--select",
+        "ALL",
+        "--ignore",
+        "COM,D203,D213,DTZ,EM,FBT,FIX,G,ICN,PD,RET501,RET502,RET503,RET504,SLF,TRY003",
+        "--per-file-ignores",
+        "**/__init__.py:F401,**/test_*.py:S101"
+    ],
+    "ruff.lint.run": "onSave",
     "scm.alwaysShowActions": true,
     "scm.alwaysShowRepositories": true,
     "scm.defaultViewMode": "tree",
