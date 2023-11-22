@@ -44,6 +44,17 @@ function venv() {
     fi
 }
 
+# run pre-commit hooks on modified files
+function pcr() {
+    if [[ "${#}" -eq 0 ]]; then
+        echo "Running all pre-commit hooks on modified files in the repository"
+        pre-commit run
+    else
+        echo "Running "${1}" pre-commit hook on modified files in the repository"
+        pre-commit run "${1}"
+    fi
+}
+
 # run pre-commit hooks on all files
 function pcra() {
     if [[ "${#}" -eq 0 ]]; then
@@ -52,5 +63,16 @@ function pcra() {
     else
         echo "Running "${1}" pre-commit hook on all files in the repository"
         pre-commit run --all-files "${1}"
+    fi
+}
+
+# run pre-commit hooks on all files at manual stage
+function pcram() {
+    if [[ "${#}" -eq 0 ]]; then
+        echo "Running all pre-commit hooks on all files in the repository at manual stage"
+        pre-commit run --all-files --hook-stage manual
+    else
+        echo "Running "${1}" pre-commit hook on all files in the repository at manual stage"
+        pre-commit run --all-files "${1}" --hook-stage manual
     fi
 }
