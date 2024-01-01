@@ -1,4 +1,7 @@
 {
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
     "autoDocstring.docstringFormat": "numpy",
     "black-formatter.args": [
         "--line-length",
@@ -149,6 +152,7 @@
     "pythonIndent.trimLinesWithOnlyWhitespace": true,
     "rainbow_csv.rbql_with_headers_by_default": true,
     "redhat.telemetry.enabled": false,
+    "remote.autoForwardPortsSource": "hybrid",
     "ruff.importStrategy": "useBundled",
     "ruff.lint.args": [
         "--fix",
