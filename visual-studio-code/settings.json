@@ -54,7 +54,7 @@
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 120,
     "editor.wrappingIndent": "indent",
-    "explorer.autoReveal": "focusNoScroll",
+    "explorer.autoReveal": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.fileNesting.enabled": true,
