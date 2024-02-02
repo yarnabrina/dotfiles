@@ -88,7 +88,6 @@
         "--profile",
         "black",
         "--atomic",
-        "--float-to-top",
         "--line-length",
         "99",
         "--remove-redundant-aliases"
@@ -132,6 +131,7 @@
         "--enable",
         "all",
         "--disable",
+        "import-outside-toplevel",
         "logging-fstring-interpolation",
         "--logging-format-style",
         "new",
@@ -161,7 +161,7 @@
         "--ignore",
         "COM,D203,D213,DTZ,EM,FBT,FIX,G,ICN,PD,RET501,RET502,RET503,RET504,SLF,TRY003",
         "--per-file-ignores",
-        "**/__init__.py:F401,**/test_*.py:S101"
+        "**/__init__.py:F401,**/tests/**/conftest.py:INP001,**/tests/**/conftest.py:PLR0913,**/tests/**/test_*.py:INP001,**/tests/**/test_*.py:PLR0913,**/test_*.py:S101"
     ],
     "ruff.lint.run": "onSave",
     "scm.alwaysShowActions": true,
