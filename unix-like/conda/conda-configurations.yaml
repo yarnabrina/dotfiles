@@ -12,7 +12,6 @@
 # channels:
 #   - defaults
 channels:
-  - defaults
   - conda-forge
 
 # # channel_alias (str)
@@ -28,11 +27,9 @@ channels:
 # default_channels:
 #   - https://repo.anaconda.com/pkgs/main
 #   - https://repo.anaconda.com/pkgs/r
-default_channels:
-  - https://repo.anaconda.com/pkgs/main
 
 # # override_channels_enabled (bool)
-# #   Permit use of the --overide-channels command-line flag.
+# #   Permit use of the --override-channels command-line flag.
 # #
 # override_channels_enabled: true
 
@@ -137,13 +134,24 @@ default_channels:
 # #   Threads to use when downloading packages.  When not set, defaults to
 # #   None, which uses the default ThreadPoolExecutor behavior.
 # #
-# fetch_threads: 5
+# fetch_threads: 0
 
 # # experimental (sequence: primitive)
 # #   env var string delimiter: ','
 # #   List of experimental features to enable.
 # #
 # experimental: []
+
+# # no_lock (bool)
+# #   Disable index cache lock (defaults to enabled).
+# #
+# no_lock: false
+
+# # repodata_use_zst (bool)
+# #   Disable check for `repodata.json.zst`; use `repodata.json` only.
+# #
+# repodata_use_zst: true
+
 
 # ######################################################
 # ##            Basic Conda Configuration             ##
@@ -177,6 +185,7 @@ envs_dirs:
 # #   out the unlinking and linking steps
 # #
 # default_threads: 0
+
 
 # ######################################################
 # ##              Network Configuration               ##
@@ -250,10 +259,12 @@ envs_dirs:
 # #   browser. By default, SSL verification is enabled, and conda operations
 # #   will fail if a required url's certificate cannot be verified. Setting
 # #   ssl_verify to False disables certification verification. The value for
-# #   ssl_verify can also be (1) a path to a CA bundle file, or (2) a path
-# #   to a directory containing certificates of trusted CA.
+# #   ssl_verify can also be (1) a path to a CA bundle file, (2) a path to a
+# #   directory containing certificates of trusted CA, or (3) 'truststore'
+# #   to use the operating system certificate store.
 # #
 # ssl_verify: true
+
 
 # ######################################################
 # ##               Solver Configuration               ##
@@ -275,6 +286,7 @@ envs_dirs:
 # #   detected.
 # #
 # auto_update_conda: true
+auto_update_conda: false
 
 # # channel_priority (ChannelPriority)
 # #   Accepts values of 'strict', 'flexible', and 'disabled'. The default
@@ -289,6 +301,7 @@ envs_dirs:
 # #   True or False. True is now an alias to 'flexible'.
 # #
 # channel_priority: flexible
+channel_priority: strict
 
 # # create_default_packages (sequence: primitive)
 # #   env var string delimiter: ','
@@ -296,7 +309,7 @@ envs_dirs:
 # #
 # create_default_packages: []
 create_default_packages:
-  - python>=3.8
+  - python>=3.9
 
 # # disallowed_packages (sequence: primitive)
 # #   aliases: disallow
@@ -325,6 +338,7 @@ create_default_packages:
 # #   packages.
 # #
 # pip_interop_enabled: false
+pip_interop_enabled: true
 
 # # track_features (sequence: primitive)
 # #   env var string delimiter: ','
@@ -340,8 +354,8 @@ create_default_packages:
 # #   into a list of specs to add and/or remove from a given environment,
 # #   based on their dependencies and specified constraints.
 # #
-# solver: classic
-solver: libmamba
+# solver: libmamba
+
 
 # ######################################################
 # ##  Package Linking and Install-time Configuration  ##
@@ -419,6 +433,12 @@ solver: libmamba
 # #
 # shortcuts: true
 
+# # shortcuts_only (sequence: primitive)
+# #   env var string delimiter: ','
+# #   Create shortcuts only for the specified package names.
+# #
+# shortcuts_only: []
+
 # # non_admin_enabled (bool)
 # #   Allows completion of conda's create, install, update, and remove
 # #   operations, for non-privileged (non-root or non-administrator) users.
@@ -446,6 +466,7 @@ solver: libmamba
 # #   may not see much benefit here.
 # #
 # execute_threads: 0
+
 
 # ######################################################
 # ##            Conda-build Configuration             ##
@@ -477,6 +498,7 @@ solver: libmamba
 # #
 # conda_build: {}
 
+
 # ######################################################
 # ##  Output, Prompt, and Flow Control Configuration  ##
 # ######################################################
@@ -487,6 +509,7 @@ solver: libmamba
 # #   conda operation, such as when running `conda install`.
 # #
 # always_yes:
+always_yes: false
 
 # # auto_activate_base (bool)
 # #   Automatically activate the base environment during shell
@@ -531,6 +554,7 @@ auto_activate_base: false
 # #   install, update, or remove operation.
 # #
 # notify_outdated_conda: true
+notify_outdated_conda: false
 
 # # quiet (bool)
 # #   Disable progress bar display and other output.
@@ -578,3 +602,14 @@ report_errors: false
 # #   notices, set this to 0.
 # #
 # number_channel_notices: 5
+
+
+# ######################################################
+# ##               Plugin Configuration               ##
+# ######################################################
+
+# # no_plugins (bool)
+# #   Disable all currently-registered plugins, except built-in conda
+# #   plugins.
+# #
+# no_plugins: false
