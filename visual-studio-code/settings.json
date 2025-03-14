@@ -217,7 +217,7 @@
     "terminal.integrated.rightClickBehavior": "default",
     "update.enableWindowsBackgroundUpdates": false,
     "update.showReleaseNotes": false,
-    "window.autoDetectColorScheme": true,
+    "window.autoDetectColorScheme": false,
     "window.dialogStyle": "custom",
     "window.menuBarVisibility": "visible",
     "window.restoreWindows": "one",
